@@ -1,11 +1,11 @@
 
 # Para copiar archivos de una carpeta a otra carpeta recien creada
 
-dir_salida = "D:/ENADIS/Tabs/pubs_2022/"
+dir_salida = "Esta/Es/Tu/Ruta_de_salida/"
 archivos = list.files(dir_salida)
-dir_llegada = "D:/ENADIS/Tabs/pubs_2022_ASP/" 
+dir_llegada = "Aqui/Pones/las/Copias/" 
 
-#-----
+#----- Función auxiliar ------
 seleccionados <- function(dir_salida){
   archivos <- list.files(salida)
   archivos_total <- purrr::map(.x = 1:length(archivos), 
@@ -15,12 +15,12 @@ seleccionados <- function(dir_salida){
   return(archivos_x)
 }
 
-#-----
+#-----------------------------
 
 copia_a_nueva <- function(dir_salida, dir_llegada){
   dir.create(dir_llegada)
   
-  salto<-"\n"
+  salto <- "\n"
   cat(
     "Indica el número de la opción que quieres:",salto, salto,
     "1) Todos los archivos",salto,
